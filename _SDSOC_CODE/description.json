@@ -1,0 +1,52 @@
+{
+    "example": "ZynqNet",
+    "overview": [
+        "An FPGA-Accelerated Embedded Convolutional Neural Network."
+    ],
+    "key_concepts": [ "FPGA Accelerated CNN"],
+    "keywords": ["#pragma HLS PIPELINE", "#pragma HLS ARRAY_PARTITION"],
+    "contributors" : [
+        {
+            "group": "George Mason University",
+            "url" : "http://www.gmu.edu"
+        }
+    ],
+    "revision" : [
+        {
+            "date" : "FEBRUARY2018",
+            "version": "1.0",
+            "description": "Initial Release"
+        }
+    ],
+    "exec" : "zynqnet.elf",
+    "compiler" : {
+        "options" : "-Wno-unused-label"
+    },
+    "accelerators": [
+       {
+           "name" : "fpga_top",
+           "location" : "fpga_top.cpp",
+           "subfiles" : [ "memory_controller.cpp",
+                          "image_cache.cpp",
+                          "weights_cache.cpp",
+                          "output_cache.cpp",
+                          "gpool_cache.cpp",
+                          "processing_element.cpp"
+                          ]
+
+       }
+    ],
+    "libs": [
+            "sds_utils"
+    ],
+    "source_dir" : "*.cpp",
+    "os" : [
+            "linux",
+            "standalone"
+    ],
+    "runtime" : [
+            "C/C++"
+    ],
+    "pass_string" : "TEST PASSED",
+    "fail_string" : "TEST FAILED" 
+}

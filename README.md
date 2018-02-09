@@ -98,6 +98,8 @@ The compiled accelerator bitstream can be found under [_BITSTREAM](https://githu
 
 The firmware for the Zynq XC-7Z045 ARM processors is stored under [_FIRMWARE](https://github.com/dgschwend/zynqnet/tree/master/_FIRMWARE).
 
+The SDSoC project for the Zynq XC-7Z045 ARM processors is stored under [_SDSOC_CODE](https://github.com/dgschwend/zynqnet/tree/master/_SDSOC_CODE).
+
 ## Netscope CNN Analyzer
 The CNN analysis tool can be found in a separate repository here: [dgschwend/netscope](https://github.com/dgschwend/netscope)
 
