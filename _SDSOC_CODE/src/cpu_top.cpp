@@ -11,7 +11,12 @@
 //------------------------------------------------------------------------------
 
 #include "cpu_top.hpp"
-
+#ifdef __SDSCC__
+#include <stdlib.h>
+#include "sds_lib.h"
+#define malloc(x) (sds_alloc(x))
+#define free(x) (sds_free(x))
+#endif
 // ====================
 // = Global Variables =
 // ====================

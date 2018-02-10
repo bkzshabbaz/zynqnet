@@ -26,12 +26,12 @@
        {
            "name" : "fpga_top",
            "location" : "fpga_top.cpp",
-           "subfiles" : [ "memory_controller.cpp",
-                          "image_cache.cpp",
-                          "weights_cache.cpp",
-                          "output_cache.cpp",
-                          "gpool_cache.cpp",
-                          "processing_element.cpp"
+           "subfiles" : [ "../../src/memory_controller.cpp",
+                          "../../src/image_cache.cpp",
+                          "../../src/weights_cache.cpp",
+                          "../../src/output_cache.cpp",
+                          "../../src/gpool_cache.cpp",
+                          "../../src/processing_element.cpp"
                           ]
 
        }
@@ -39,7 +39,7 @@
     "libs": [
             "sds_utils"
     ],
-    "source_dir" : "*.cpp",
+    "source_dir" : "src/*.cpp",
     "os" : [
             "linux",
             "standalone"

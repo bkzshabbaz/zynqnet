@@ -16,7 +16,7 @@ TARGET := hw
 pwd := $(CURDIR)
 
 # Points to Utility Directory
-COMMON_REPO = ../../../
+COMMON_REPO = ../
 ABS_COMMON_REPO = $(shell readlink -f $(COMMON_REPO))
 
 # Include Libraries
@@ -48,13 +48,25 @@ BUILD_DIR := build/$(PLATFORM)_$(TARGET_OS)_$(TARGET)
 #+--------------------------------------------------------------------------
 
 # Source Files
-SRC_DIR := 
+SRC_DIR := src
 OBJECTS += \
-
+$(pwd)/$(BUILD_DIR)/memory_controller.o \
+$(pwd)/$(BUILD_DIR)/gpool_cache.o \
+$(pwd)/$(BUILD_DIR)/cpu_top.o \
+$(pwd)/$(BUILD_DIR)/netconfig.o \
+$(pwd)/$(BUILD_DIR)/output_cache.o \
+$(pwd)/$(BUILD_DIR)/xfpga.o \
+$(pwd)/$(BUILD_DIR)/fpga_top.o \
+$(pwd)/$(BUILD_DIR)/network.o \
+$(pwd)/$(BUILD_DIR)/image_cache.o \
+$(pwd)/$(BUILD_DIR)/weights_cache.o \
+$(pwd)/$(BUILD_DIR)/shared_dram.o \
+$(pwd)/$(BUILD_DIR)/axilite.o \
+$(pwd)/$(BUILD_DIR)/processing_element.o
 
 # SDS Options
 HW_FLAGS :=
-HW_FLAGS += -sds-hw fpga_top fpga_top.cpp -files memory_controller.cpp,image_cache.cpp,weights_cache.cpp,output_cache.cpp,gpool_cache.cpp,processing_element.cpp  -sds-end
+HW_FLAGS += -sds-hw fpga_top fpga_top.cpp -files ../../src/memory_controller.cpp,../../src/image_cache.cpp,../../src/weights_cache.cpp,../../src/output_cache.cpp,../../src/gpool_cache.cpp,../../src/processing_element.cpp  -sds-end
 
 EMU_FLAGS := 
 ifeq ($(TARGET), emu)

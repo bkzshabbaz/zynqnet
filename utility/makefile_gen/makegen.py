@@ -71,7 +71,7 @@ def create_mk(target, data):
     target.write("\n")
 
     target.write("# Points to Utility Directory\n")
-    target.write("COMMON_REPO = ../../../\n") 
+    target.write("COMMON_REPO = ../\n") 
     target.write("ABS_COMMON_REPO = $(shell readlink -f $(COMMON_REPO))\n")
     target.write("\n")
   
